@@ -10,10 +10,7 @@ export default function Footer() {
         <a className="link link-hover">Discord</a>
       </nav>
       <aside>
-        <p>
-          Copyright © {new Date().getFullYear()} - All rights reserved by
-          Instant
-        </p>
+        <p>Copyright © {new Date().getFullYear()} - All rights reserved</p>
       </aside>
     </footer>
   );

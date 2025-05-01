@@ -12,7 +12,7 @@ export async function signIn(formData: FormData) {
 
   const { error } = await supabase.auth.signInWithOtp({
     ...data,
-    options: { emailRedirectTo: `${process.env.NEXT_PUBLIC_URL}/chats` },
+    options: { emailRedirectTo: `${process.env.NEXT_PUBLIC_URL}` },
   });
 
   if (error) {
@@ -20,5 +20,4 @@ export async function signIn(formData: FormData) {
   }
 
   revalidatePath("/", "layout");
-  redirect("/");
 }

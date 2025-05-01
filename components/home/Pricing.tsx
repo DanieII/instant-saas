@@ -1,23 +1,25 @@
-"use client";
-
-import { useClientUser } from "@/hooks/useClientUser";
+import SubscribeButton from "./SubscribeButton";
 
 const plans = [
   {
-    priceId: process.env.NODE_ENV === "development" ? "" : "",
+    priceId:
+      process.env.NODE_ENV === "development"
+        ? "price_************************"
+        : "price_************************",
     price: 1,
     title: "Lorem",
   },
   {
-    priceId: process.env.NODE_ENV === "development" ? "" : "",
+    priceId:
+      process.env.NODE_ENV === "development"
+        ? "price_************************"
+        : "price_************************",
     price: 1,
     title: "Ipsum",
   },
 ];
 
 export default function Pricing() {
-  const { user } = useClientUser();
-
   return (
     <div className="container mx-auto space-y-8 px-8 py-20" id="pricing">
       <h2 className="text-center text-4xl font-bold">Pricing</h2>
@@ -103,7 +105,7 @@ export default function Pricing() {
                 </li>
               </ul>
               <div className="mt-6">
-                <button className="btn btn-primary btn-block">Subscribe</button>
+                <SubscribeButton priceId={plan.priceId} />
               </div>
             </div>
           </div>

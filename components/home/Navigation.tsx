@@ -31,7 +31,7 @@ export default function Navigation() {
         </div>
         <div className="hidden flex-1 justify-end md:flex">
           {user ? (
-            <Link className="btn btn-primary" href="/">
+            <Link className="btn btn-primary" href="/dashboard">
               Dashboard
             </Link>
           ) : (
@@ -72,7 +72,7 @@ export default function Navigation() {
               </li>
               <li className="mt-2">
                 {user ? (
-                  <Link className="btn btn-primary" href="/">
+                  <Link className="btn btn-primary" href="/dashboard">
                     Dashboard
                   </Link>
                 ) : (

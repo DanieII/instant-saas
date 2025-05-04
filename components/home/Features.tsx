@@ -7,12 +7,12 @@ export default function Features() {
         </h2>
         <div className="mx-auto flex max-w-xl flex-col gap-8">
           <div className="flex items-center gap-4">
-            <div className="bg-primary self-start rounded-full p-2">
+            <div className="bg-secondary self-start rounded-full p-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="text-primary-content size-6"
+                className="text-secondary-content size-6"
               >
                 <path
                   fillRule="evenodd"
@@ -59,12 +59,12 @@ export default function Features() {
             </div>
           </div>
           <div className="flex items-center gap-4">
-            <div className="bg-accent self-start rounded-full p-2">
+            <div className="bg-secondary self-start rounded-full p-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="text-accent-content size-6"
+                className="text-secondary-content size-6"
               >
                 <path
                   fillRule="evenodd"

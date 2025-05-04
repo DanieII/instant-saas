@@ -25,8 +25,8 @@ Follow these steps to set up and run the project locally.
 Ensure you have the following installed:
 
 - **Node.js**
-- A Supabase account
-- A Stripe account
+- A **Supabase** account
+- A **Stripe** account
 - **Stripe CLI** for webhook testing
 
 ### Installation
@@ -57,6 +57,16 @@ Ensure you have the following installed:
    ```
 
    This will create the necessary `subscriptions` table in your Supabase database.
+
+5. [Set up Google OAuth](https://supabase.com/docs/guides/auth/social-login/auth-google?queryGroups=environment&environment=client&queryGroups=framework&framework=nextjs#application-code-configuration)
+
+6. Create a new Stripe product and add the prices in the Pricing component
+
+7. Run the Stripe CLI to listen for webhook events:
+
+   ```bash
+   stripe listen --forward-to localhost:3000/api/webhooks/stripe
+   ```
 
 ### Deployment
 

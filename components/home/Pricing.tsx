@@ -33,32 +33,29 @@ const plans = [
 export default function Pricing() {
   return (
     <div className="container mx-auto px-8 py-20" id="pricing">
-      <div className="space-y-8">
+      <div className="space-y-12">
         <h2 className="text-center text-4xl font-bold tracking-tight">
           Pricing
         </h2>
         <div className="flex flex-col justify-center gap-8 lg:flex-row">
           {plans.map((plan) => (
             <div
-              className={`card bg-base-100 w-full shadow-sm lg:w-96 ${plan.title === "Yearly" && "border-primary border-2 shadow-xl"}`}
+              className={`card bg-base-100 relative w-full shadow-sm lg:w-96 ${plan.title === "Yearly" && "border-primary border-2 shadow-xl"}`}
               key={plan.title}
             >
+              {plan.title === "Yearly" && (
+                <div className="badge badge-primary absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 font-semibold">
+                  Popular
+                </div>
+              )}
               <div className="card-body">
                 <div className="flex flex-col justify-between gap-4">
                   <h2 className="text-2xl font-bold">{plan.title}</h2>
-                  <div className="space-y-2">
-                    <div className="space-x-2">
-                      <span className="text-4xl font-bold">${plan.price}</span>
-                      <span className="text-base-content/60 text-xl">
-                        /month
-                      </span>
-                    </div>
-                    <p className="text-base-content/60">
-                      Paid {plan.title}. Total per year:{" "}
-                      <span className="text-base-content font-bold">
-                        ${plan.price * 12}
-                      </span>
-                    </p>
+                  <div className="space-x-2">
+                    <span className="text-4xl font-bold">${plan.price}</span>
+                    <span className="text-base-content/60 text-xl">
+                      /month{plan.title === "Yearly" && ", billed yearly"}
+                    </span>
                   </div>
                 </div>
                 <ul className="my-4 flex flex-col gap-2">

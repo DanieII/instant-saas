@@ -1,7 +1,7 @@
 export default function FAQ() {
   return (
     <div className="container mx-auto px-8 py-20" id="faq">
-      <div className="flex flex-col items-center space-y-8">
+      <div className="flex flex-col items-center space-y-12">
         <h2 className="text-center text-4xl font-bold">
           Frequently Asked Questions
         </h2>

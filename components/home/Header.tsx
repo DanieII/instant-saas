@@ -2,7 +2,7 @@ export default function Header() {
   return (
     <div className="container mx-auto px-8 py-20">
       <div className="flex flex-col items-center space-y-8 text-center">
-        <h1 className="text-5xl font-bold tracking-tight">
+        <h1 className="mb-12 text-5xl font-bold tracking-tight">
           Launch your app{" "}
           <span className="bg-primary text-primary-content">instantly</span>
         </h1>

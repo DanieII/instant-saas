@@ -37,7 +37,7 @@ export default function Pricing() {
         <h2 className="text-center text-4xl font-bold tracking-tight">
           Pricing
         </h2>
-        <div className="flex flex-col justify-center gap-8 lg:flex-row">
+        <div className="flex flex-col justify-center gap-12 lg:flex-row">
           {plans.map((plan) => (
             <div
               className={`card bg-base-100 relative w-full shadow-sm lg:w-96 ${plan.title === "Yearly" && "border-primary border-2 shadow-xl"}`}

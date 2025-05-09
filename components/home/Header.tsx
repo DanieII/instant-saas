@@ -10,7 +10,7 @@ export default function Header() {
           Instant is a free and open-source SaaS template
         </p>
         <div>
-          <a href="#pricing" className="btn btn-primary">
+          <a href="/signin" className="btn btn-primary">
             Get Started
           </a>
         </div>

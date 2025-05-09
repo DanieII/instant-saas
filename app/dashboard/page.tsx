@@ -17,7 +17,7 @@ export default async function Dashboard() {
   const hasAccess = await userHasAccess(supabase, user.id);
 
   if (!hasAccess) {
-    redirect("/");
+    redirect("/#pricing");
   }
 
   return (

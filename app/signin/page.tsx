@@ -37,7 +37,7 @@ export default function SignInPage() {
     <div className="bg-base-200">
       <div className="container mx-auto flex min-h-screen px-8 py-4">
         <div className="flex flex-1 items-center justify-center">
-          <div className="bg-base-100 border-base-300 w-full max-w-lg space-y-4 rounded-lg border p-8">
+          <div className="bg-base-100 border-base-300 w-full max-w-lg space-y-4 rounded-xl border p-8">
             {isSent ? (
               <p className="text-center font-bold">
                 Check your email for the magic link

@@ -6,7 +6,7 @@ export default function Features() {
           <h2 className="text-center text-4xl font-bold tracking-tight">
             Features
           </h2>
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
             <div className="border-base-300 bg-base-100 flex flex-col items-center gap-4 rounded-xl border p-8 text-center shadow-xl">
               <div className="bg-secondary rounded-full p-2">
                 <svg

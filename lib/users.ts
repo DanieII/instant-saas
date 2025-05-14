@@ -5,7 +5,7 @@ export async function userHasAccess(supabase: SupabaseClient, userId: string) {
     .from("subscriptions")
     .select()
     .eq("user_id", userId)
-    .single();
+    .maybeSingle();
 
   if (error) {
     console.error("Error fetching subscription data:", error);

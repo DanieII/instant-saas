@@ -43,6 +43,7 @@ export async function updateSession(request: NextRequest) {
     !user &&
     !request.nextUrl.pathname.startsWith("/signin") &&
     !request.nextUrl.pathname.startsWith("/auth") &&
+    !(request.nextUrl.pathname === "/webhook/stripe") &&
     !(request.nextUrl.pathname === "/")
   ) {
     // no user, potentially respond by redirecting the user to the signin page

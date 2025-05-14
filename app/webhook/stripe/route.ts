@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
-import { createClient } from "@/lib/supabase/server";
+import { createClient } from "@/lib/supabase/admin";
 
 const stripe = new Stripe(process.env.STRIPE_API_KEY!);
 const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET!;
@@ -33,16 +33,18 @@ export async function POST(req: Request) {
 
         // Grant access to the product
         const customerId = session.customer as string;
-        const priceId = session.line_items?.data[0]?.price?.id;
-        const userId = session?.metadata?.user_id;
+        const priceId = session.line_items?.data[0]?.price?.id as string;
+        const userId = session?.metadata?.user_id as string;
 
         const { error } = await supabase
           .from("subscriptions")
-          .upsert({
-            user_id: userId,
-            customer_id: customerId,
-            price_id: priceId,
-          })
+          .upsert([
+            {
+              user_id: userId,
+              customer_id: customerId,
+              price_id: priceId,
+            },
+          ])
           .eq("user_id", userId);
         if (error) throw error;
 
@@ -53,12 +55,13 @@ export async function POST(req: Request) {
         // Get subscription data
         const data = event.data.object as Stripe.Subscription;
         const subscription = await stripe.subscriptions.retrieve(data.id);
+        const subscriptionCustomerId = subscription.customer as string;
 
         // Revoke access to the product
         const { error } = await supabase
           .from("subscriptions")
           .delete()
-          .eq("customer_id", subscription.customer);
+          .eq("customer_id", subscriptionCustomerId);
         if (error) throw error;
 
         break;

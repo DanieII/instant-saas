@@ -7,7 +7,8 @@ This is a starter template for building SaaS applications using Next.js with sup
 - User authentication with Supabase.
 - Subscription management with Stripe.
 - Responsive design with Tailwind CSS.
-- Dashboard for logged-in users.
+- Dashboard for subscribed users.
+- Form handling with React Hook Form and Zod.
 
 ## Tech Stack
 
@@ -71,7 +72,7 @@ Follow these steps to set up and run the project locally:
    - Create a new product in Stripe and add pricing plans. Update the `Pricing` component in the codebase with the corresponding `priceId` values for each plan.
    - Add customer portal link in the `CustomerPortalButton` component.
 
-6. **Run Stripe CLI for Webhooks**
+6. **Run Stripe CLI to test subscriptions**
 
    ```bash
    stripe listen --forward-to localhost:3000/api/webhooks/stripe

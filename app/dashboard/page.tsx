@@ -1,3 +1,4 @@
+import InstantModal from "@/components/InstantModal";
 import Navigation from "@/components/Navigation";
 import { createClient } from "@/lib/supabase/server";
 import { userHasAccess } from "@/lib/users";
@@ -24,7 +25,7 @@ export default async function Dashboard() {
     <>
       <Navigation />
       <div className="container mx-auto p-8">
-        <h1 className="text-xl font-bold">Hello World</h1>
+        <InstantModal />
       </div>
     </>
   );

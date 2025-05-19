@@ -76,7 +76,9 @@ export default function Navigation() {
                     Dashboard
                   </Link>
                 ) : (
-                  <Link href="/signin">Sign In</Link>
+                  <Link className="btn btn-primary" href="/signin">
+                    Sign In
+                  </Link>
                 )}
               </li>
             </ul>

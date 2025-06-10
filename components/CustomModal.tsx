@@ -10,7 +10,7 @@ export default function CustomModal({
   children,
 }: CustomModalProps) {
   return isOpen ? (
-    <div className="fixed inset-0 flex items-center justify-center bg-black/50 px-8 py-4">
+    <div className="fixed inset-0 z-10 flex items-center justify-center bg-black/50 px-8 py-4">
       <div className="bg-base-100 relative w-full max-w-lg space-y-4 rounded-xl p-12">
         <div
           className="absolute top-4 right-4 cursor-pointer"

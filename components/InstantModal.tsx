@@ -48,13 +48,13 @@ export default function InstantModal() {
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <input
             className="input input-bordered w-full"
-            placeholder="Field"
             {...register("field")}
+            placeholder="Field"
             required
             disabled={isSubmitting}
           />
           {errors.field && (
-            <div className="text-red-500">{errors.field.message}</div>
+            <div className="text-error">{errors.field.message}</div>
           )}
           {error && <div className="text-error">{error}</div>}
           <button

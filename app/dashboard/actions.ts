@@ -1,10 +1,11 @@
 "use server";
 
-import { instantSchema } from "@/lib/schemas";
+import { ExampleFormValues } from "@/lib/types";
+import { exampleSchema } from "@/lib/schemas";
 import { createClient } from "@/lib/supabase/server";
 
-export const instant = async (data: { field: string }) => {
-  const validatedFields = instantSchema.safeParse(data);
+export const exampleAction = async (data: ExampleFormValues) => {
+  const validatedFields = exampleSchema.safeParse(data);
   if (!validatedFields.success) {
     return { error: validatedFields.error.message };
   }

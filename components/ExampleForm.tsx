@@ -23,8 +23,8 @@ export default function ExampleForm() {
 
   async function onClose() {
     setIsOpen(false);
-    reset();
     setError("");
+    reset();
   }
 
   async function onSubmit(data: ExampleFormData) {
@@ -46,12 +46,11 @@ export default function ExampleForm() {
         Example
       </button>
       <CustomModal
-        isOpen={isOpen}
-        setIsOpen={setIsOpen}
         title="Example Form"
-        submit={handleSubmit(onSubmit)}
-        isSubmitting={isSubmitting}
+        isOpen={isOpen}
         onClose={onClose}
+        onSubmit={handleSubmit(onSubmit)}
+        isSubmitting={isSubmitting}
       >
         <form className="space-y-4">
           <fieldset className="fieldset">
